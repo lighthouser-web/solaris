@@ -172,6 +172,11 @@ p {
 }
 
 .orange-text {
+    color: inherit;
+    transition: all 0.5s ease-in-out 2s;
+}
+
+.orange-text.visible {
     color: var(--strongColor);
 }
 
@@ -381,11 +386,15 @@ main {
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    position: relative;
+    z-index: 0;
 }
 
 #section-nosotros img {
     margin: 1rem 0;
     border-bottom: 0.5rem solid var(--strongColor);
+    position: relative;
+    z-index: 1;
 }
 
 #productos-y-servicios {
@@ -469,6 +478,7 @@ main {
     justify-content: left;
     gap: 2.5rem;
     padding: 3.5rem 0 0;
+    overflow: hidden;
 }
 
 #eficiencia-div-ul li {
@@ -550,7 +560,7 @@ main {
     height: 36px;
     margin-top: 0.5rem;
     padding: 0.25rem 1rem;
-    border: none;
+    border: solid 1px grey;
     border-radius: 8px;
 }
 
@@ -561,7 +571,7 @@ main {
     height: 24vh;
     margin-top: 0.5rem;
     padding: 0.25rem 1rem;
-    border: none;
+    border: solid 1px grey;
     border-radius: 8px;
 }
 
@@ -631,6 +641,53 @@ footer hr {
     max-width: none;
     text-align: center;
     padding: 1.5rem;
+}
+
+.moving-text {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.75s ease-in-out;
+}
+
+.moving-text-slow {
+    opacity: 0;
+    transform: translateY(25%);
+    transition: all 0.75s ease-in-out;
+}
+
+.moving-text.visible, .moving-text-slow.visible {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.fade-in-element-h1 {
+    opacity: 0;
+    transition: all 1s ease-in-out;   
+}
+
+.fade-in-element-h1.visible {
+    opacity: 1;
+}
+
+.fade-in-element {
+    opacity: 0;
+    transition: all 1.2s ease-in-out;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+}
+
+.eficiencia-li {
+    position: relative;
+    opacity: 0;
+    transform: translateX(75%);
+    transition: all 1s ease-in-out;
+}
+
+.eficiencia-li.visible {
+    opacity: 1;
+    transform: translateX(0%);
 }
 
 @media (min-width: 996px) {
